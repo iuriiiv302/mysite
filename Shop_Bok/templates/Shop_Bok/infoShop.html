@@ -1,0 +1,7 @@
+<ul>
+    <li><b>{{ idShop.book }} / {{ idShop }}</b></li>
+    {% for shop in shops %}
+    <i>{{ shop }}</i><br>
+    {% endfor %}
+</ul>
+<a href="{% url 'shop_detail' %}">Bfack</a>

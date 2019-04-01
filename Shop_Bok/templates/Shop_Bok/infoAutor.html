@@ -1,6 +1,7 @@
 <ul>
-    {% for bok in boks %}
-    <i>{{ book }}</i><br>
+    <li><b>{{ Book.title}} / {{ idAutor }}</b></li>
+    {% for bok in autobok %}
+    <i>{{ bok }}</i><br>
     {% endfor %}
 </ul>
-<a href="{% url 'bok_detail' %}">Back</a>
+<a href="{% url 'autor_detail' %}">Back</a>

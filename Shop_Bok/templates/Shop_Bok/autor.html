@@ -1,7 +1,7 @@
     {% block autor %}
     <ul>
     {% for b in autor  %}
-        <li>{{ b.first_name }}</li>
+        <li><a href="{% url 'autorinfo' b.pk %}">{{ b.first_name }}</li>
     {% endfor %}
     </ul>
     {% endblock autor %}

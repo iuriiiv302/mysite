@@ -21,11 +21,19 @@ def bokinfo(request, pk):
     idBOK = get_object_or_404(Book, pk=pk)
     shops = idBOK.shop_set.all()
     print(shops)
-    return render(request, 'Shop_Bok/infoBok.html', {'idBOK': idBOK, "shops": shops})
+    return render(request, 'Shop_Bok/infoBok.html', {'idBOK': idBOK, 'shops': shops})
 
 
 def Autorinfo (request,pk):
     idAutor = get_object_or_404(Author,pk=pk)
-    boks = Book.objets.filter(author=idAutor)
-    print(boks)
-    return render(request,'Shop_Bok/infoAutor.html',{'idAutor':idAutor,"books":boks})
+    autobok = Book.objects.filter(author_id=idAutor)
+    print(autobok)
+    return render(request,'Shop_Bok/infoAutor.html',{'idAutor':idAutor,'autobok':autobok})
+
+def shopinfo (request,pk):
+    idShop = get_object_or_404(Shop,pk=pk)
+    Book = idShop. books.all()
+    print(Book)
+    return render(request,'Shop_Bok/infoShop.html',{'idShop':idShop,'shops':Book})
+
+
