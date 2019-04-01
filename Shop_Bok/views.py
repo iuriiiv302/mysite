@@ -36,4 +36,3 @@ def shopinfo (request,pk):
     print(Book)
     return render(request,'Shop_Bok/infoShop.html',{'idShop':idShop,'shops':Book})
 
-
