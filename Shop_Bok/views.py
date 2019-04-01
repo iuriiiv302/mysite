@@ -24,4 +24,8 @@ def bokinfo(request, pk):
     return render(request, 'Shop_Bok/infoBok.html', {'idBOK': idBOK, "shops": shops})
 
 
-
+def Autorinfo (request,pk):
+    idAutor = get_object_or_404(Author,pk=pk)
+    boks = Book.objets.filter(author=idAutor)
+    print(boks)
+    return render(request,'Shop_Bok/infoAutor.html',{'idAutor':idAutor,"books":boks})
