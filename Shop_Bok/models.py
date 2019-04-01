@@ -13,6 +13,7 @@ class Book(models.Model):
     def get_absolute_url(self):
         return reverse('book-detail', args=[str(self.id)])
 
+
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
@@ -22,3 +23,15 @@ class Author(models.Model):
 
     def __str__(self):
         return '%s, %s' % (self.last_name, self.first_name)
+
+
+class Shop(models.Model):
+    Name1 = models.CharField(max_length=100)
+    Adress = models.CharField(max_length=100)
+    books = models.ManyToManyField('Book')
+
+    def get_absolute_url(self):
+        return reverse('shop-detail', args=[str(self.id)])
+
+    def __str__(self):
+        return '%s, %s' % (self.Name1, self.Adress)
