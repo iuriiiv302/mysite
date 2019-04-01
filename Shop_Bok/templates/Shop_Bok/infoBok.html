@@ -1,17 +1,7 @@
 <ul>
-    <li>{{ idBOK }}</li>
-</ul>
-<ul>
-    <li>{{ idBOK.author }}</li>
-</ul>
-
-<ul>
-    <li>{{ idBOK.author_id }}</li>
-</ul>
-
-
-<ul>
+    <li><b>{{ idBOK.author }} / {{ idBOK }}</b></li>
     {% for shop in shops %}
-    <li>{{ shop.name }}</li>
+    <i>{{ shop }}</i><br>
     {% endfor %}
 </ul>
+<a href="{% url 'bok_detail' %}">Back</a>

@@ -1,8 +1,8 @@
-    {% block shop %}
+{% block shop %}
     <ul>
-    {% for b in shop  %}
-        <li>{{ b.Name }}</li>
-    {% endfor %}
+        {% for b in shop %}
+            <li>{{ b.Name1 }}</li>
+        {% endfor %}
     </ul>
-    {% endblock shop %}
-
+{% endblock shop %}
+<a href="{% url 'shop_all' %}">Back</a>

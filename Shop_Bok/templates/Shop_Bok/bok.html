@@ -1,7 +1,8 @@
    {% block book %}
     <ul>
     {% for b in bok  %}
-        <li>{{ b.title }}</li>
+        <li><a href="{% url 'bokinfo' b.pk %}">{{ b.title }}</a></li>
     {% endfor %}
     </ul>
    {% endblock book %}
+<a href="{% url 'shop_all' %}">Back</a>

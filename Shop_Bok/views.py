@@ -19,6 +19,9 @@ def shop_detail(request):
 
 def bokinfo(request, pk):
     idBOK = get_object_or_404(Book, pk=pk)
-    shops = idBOK.shoop_set.all()
+    shops = idBOK.shop_set.all()
     print(shops)
     return render(request, 'Shop_Bok/infoBok.html', {'idBOK': idBOK, "shops": shops})
+
+
+
