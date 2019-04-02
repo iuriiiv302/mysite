@@ -17,6 +17,9 @@ from django.urls import path, include
 from django.contrib import admin
 from rest_framework import routers
 from edit_shop_book import views
+from django.conf import settings
+from django.conf.urls import url
+
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -26,5 +29,13 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('', include('Shop_Bok.urls')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    path('api/', include('edit_shop_book.urls'))
+
 ]
+#
+# if settings.DEBUG:
+#     from django.conf.urls.static import static
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

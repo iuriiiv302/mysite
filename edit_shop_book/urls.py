@@ -1,7 +1,9 @@
-# from django.urls import path
-# from . import views
-#
-# urlpatterns = [
-#     path('users/', views.UserViewSet, name='UserViewSet'),
-#     path('users/', views.GroupViewSetViewSet, name='GroupViewSet')
-# ]
+from django.conf.urls import url
+from rest_framework import routers
+from edit_shop_book.views import StudentViewSet, UniversityViewSet
+
+router = routers.DefaultRouter()
+router.register('students/', StudentViewSet)
+router.register('universities/', UniversityViewSet)
+
+urlpatterns = router.urls
