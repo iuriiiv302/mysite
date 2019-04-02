@@ -28,15 +28,19 @@ class StudentSerializer(serializers.ModelSerializer):
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = ('url', 'name')
+        fields = ('url', 'title', 'author')
+        fields = '__all__'
+
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
+        model = Author
         fields = ('url', 'first_name','last_name')
         fields = '__all__'
 class ShopSerializer(serializers.ModelSerializer):
     class Meta:
-        model = University
-        fields = ('url', 'name')
+        model = Shop
+        fields = ('url', 'Name1', 'Adress', 'books')
+        fields = '__all__'
+
 
 
